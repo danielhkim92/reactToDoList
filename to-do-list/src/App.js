@@ -7,9 +7,21 @@ class App extends Component {
       super(props)
 
         this.state = {
-          list: ['Laundry' ,'Dishes', 'Cleaning', 'Pooping']
+          list: ['Laundry' ,'Dishes', 'Cleaning', 'Pooping'],
+          inputValue: '',
     }
   }
+
+  handleInput = (e) => {
+    if(e.key === 'Enter'){
+      this.state.list.push(this.state.inputValue)
+    }
+
+    const state = this.state;
+    state.inputValue = e.target.value;
+    this.setState(state)
+  }
+
 
   render() {
     return (
@@ -18,7 +30,7 @@ class App extends Component {
           <Show list={this.state.list}/>
           <h1>Add ToDo List</h1>
           <label>Add Item</label>
-          <input type="text" placeholder={this.state.inputValue}  onKeyPress={this.handleInput}/>
+          <input type="text"  onKeyPress={this.handleInput}/>
 
         </div>
     );
