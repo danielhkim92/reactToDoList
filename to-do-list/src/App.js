@@ -24,10 +24,9 @@ class App extends Component {
 
   deleteItem = (item) => {
     const state = this.state;
-    const index = state.list.indexOf(item);
-    state.list.splice(index, 1); 
+    const index = state.list.indexOf(item)
+    state.list.splice(index, 1);
     this.setState(state);
-
   }
 
 

@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 
 class Show extends Component {
 
-	deleteItem = (e) => {
-		console.log(e.currentTarget.value)
-		this.props.remove(e.currentTarget.value)
-	}
+  deleteItem = (e) => {
+    console.log(e.currentTarget.value)
+    this.props.remove(e.currentTarget.value)
+  }
 
 
 
