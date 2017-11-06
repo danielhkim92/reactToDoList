@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
+import Show from './Show.js';
 
 class App extends Component {
   constructor(){
     super();
       this.state = {
-      list: ['laundry', 'dinner', 'vacuum']
+      list: ['laundry', 'dinner', 'vacuum'],
+      inputValue: '',
+      handleInput: "",
+
       
     }
-  }
-  render() {
+
+    }
+    render() {
+
+
+
+
     return (
       <div>
-        <h1> New Server</h1>
-        {this.state.list}
-
+        <label>Add Item</label>
+        <input type="text" placeholder={this.state.inputValue}  onKeyPress={this.handleInput}/>
+        <Show list={this.state.list}/>
       </div>
-    );
+    )
   }
 }
-
 export default App;
