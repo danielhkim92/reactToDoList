@@ -22,12 +22,20 @@ class App extends Component {
     this.setState(state)
   }
 
+  deleteItem = (item) => {
+    const state = this.state;
+    const index = state.list.indexOf(item);
+    state.list.splice(index, 1); 
+    this.setState(state);
+
+  }
+
 
   render() {
     return (
         <div>
           <h1>ToDo List</h1>
-          <Show list={this.state.list}/>
+          <Show remove={this.deleteItem} list={this.state.list}/>
           <h1>Add ToDo List</h1>
           <label>Add Item</label>
           <input type="text"  onKeyPress={this.handleInput}/>
